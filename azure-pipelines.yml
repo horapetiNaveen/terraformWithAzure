@@ -80,3 +80,16 @@ steps:
           -var "ARM_CLIENT_SECRET=$(ARM_CLIENT_SECRET)" `
           -var "ARM_TENANT_ID=$(ARM_TENANT_ID)" `
           -var "ARM_SUBSCRIPTION_ID=$(ARM_SUBSCRIPTION_ID)"
+
+
+    # Apply Terraform for apply
+  - task: PowerShell@2
+    displayName: "Destroy Terraform"
+    inputs:
+      targetType: "inline"
+      script: |
+        terraform.exe destroy -auto-approve `
+          -var "ARM_CLIENT_ID=$(ARM_CLIENT_ID)" `
+          -var "ARM_CLIENT_SECRET=$(ARM_CLIENT_SECRET)" `
+          -var "ARM_TENANT_ID=$(ARM_TENANT_ID)" `
+          -var "ARM_SUBSCRIPTION_ID=$(ARM_SUBSCRIPTION_ID)"
