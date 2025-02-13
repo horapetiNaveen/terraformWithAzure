@@ -9,15 +9,6 @@ terraform {
   }
 }
 
-terraform {
-  backend "azurerm" {
-    resource_group_name  = "Backend-Terraform-RG"
-    storage_account_name = "vikashbackendstorage"
-    container_name       = "tfstate"
-    key                  = "terraform.tfstate"
-  }
-}
-
 #azure provider
 provider "azurerm" {
   features {
