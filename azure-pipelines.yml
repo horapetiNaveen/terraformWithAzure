@@ -47,7 +47,6 @@ steps:
     inputs:
       targetType: 'inline'
       script: |
-        cd terraform
         terraform init
 
   # Validate Terraform
@@ -56,5 +55,4 @@ steps:
     inputs:
       targetType: 'inline'
       script: |
-        cd terraform
         terraform validate
